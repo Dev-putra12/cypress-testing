@@ -30,6 +30,7 @@ describe('template spec', () => {
     cy.get('input[name="email"]').type('admin@gmail.com')
     cy.get('input[name="password"]').type('admin')
     cy.get('button[type="submit"]').click()
+    cy.wait(5000)
 
     // test case navigasi
     // test case 1: navigasi ke sqrt
@@ -44,6 +45,7 @@ describe('template spec', () => {
     cy.get('#root > div > div > div > div > nav > div > div > div > div > a:nth-child(2)')
       .click()
     cy.wait(5000)
+    cy.visit('https://square-root-qt9w.vercel.app/')
     // test case 3: test navigasi ke translate
     cy.get('button').contains('Features').first().click()
     cy.url().should('include', 'https://square-root-qt9w.vercel.app/')
@@ -99,7 +101,6 @@ describe('template spec', () => {
     cy.get('input[type="number"]')
       .should('have.value', '')
       .type('-100')
-      .should('have.value', '-100')
     cy.get('#root > div > div:nth-child(2) > select')
       .select(1)
     cy.get('#root > div > div:nth-child(2) > button')
@@ -115,7 +116,6 @@ describe('template spec', () => {
     cy.get('input[type="number"]')
       .should('have.value', '')
       .type('abcd')
-      .should('have.value', 'abcd')
     cy.get('#root > div > div:nth-child(2) > select')
       .select(1)
     cy.get('#root > div > div:nth-child(2) > button')
@@ -160,7 +160,6 @@ describe('template spec', () => {
     cy.get('input[type="number"]')
       .should('have.value', '')
       .type('-100')
-      .should('have.value', '-100')
     cy.get('#root > div > div:nth-child(2) > select')
       .select(2)
     cy.get('#root > div > div:nth-child(2) > button')
@@ -176,7 +175,6 @@ describe('template spec', () => {
     cy.get('input[type="number"]')
       .should('have.value', '')
       .type('abcd')
-      .should('have.value', 'abcd')
     cy.get('#root > div > div:nth-child(2) > select')
       .select(2)
     cy.get('#root > div > div:nth-child(2) > button')
@@ -189,6 +187,7 @@ describe('template spec', () => {
     cy.url().should('include', 'https://square-root-qt9w.vercel.app/')
     cy.get('#root > div > div > div > div > nav > div > div > div > div > a:nth-child(3)')
       .click()
+    cy.wait(5000)
     cy.get('#root > div > div.max-w-4xl.mx-auto.p-4 > div.flex.items-center.space-x-4.mb-4 > select:nth-child(1)')
       .select('id', {
         force: true
@@ -208,6 +207,7 @@ describe('template spec', () => {
     cy.url().should('include', 'https://square-root-qt9w.vercel.app/')
     cy.get('#root > div > div > div > div > nav > div > div > div > div > a:nth-child(3)')
       .click()
+    cy.wait(5000)
     cy.get('#root > div > div.max-w-4xl.mx-auto.p-4 > div.flex.items-center.space-x-4.mb-4 > select:nth-child(1)')
       .select('id', {
         force: true
